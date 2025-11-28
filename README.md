@@ -267,6 +267,7 @@
             <ul>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experiences">Expériences</a></li>
             </ul>
         </nav>
     </header>
