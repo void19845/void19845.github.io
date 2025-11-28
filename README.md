@@ -321,28 +321,6 @@
                 <span class="skill-tag">Responsive</span>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Me Contacter</h2>
-            <div class="contact-form">
-                <form action="contact.php" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Envoyer</button>
-                </form>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
