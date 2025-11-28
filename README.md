@@ -313,11 +313,11 @@
             <h2>Compétences</h2>
             <div class="skills">
                 <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
                 <span class="skill-tag">PHP</span>
-                <span class="skill-tag">Design</span>
-                <span class="skill-tag">UX/UI</span>
-                <span class="skill-tag">Responsive</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">POO</span>
+                <span class="skill-tag">Github</span>
             </div>
         </section>
     </div>
