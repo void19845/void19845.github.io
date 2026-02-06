@@ -130,8 +130,8 @@
         }
 
         .project-image {
-            width: 50%;
-            height: 200px;
+            width: 25%;
+            height: 100px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
