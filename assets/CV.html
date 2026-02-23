@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Thaï-Nam Ngo-Marié</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+        }
+
+        .cv-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #2D3142 0%, #1a1f35 100%);
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cv-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .cv-title {
+            font-size: 0.75rem;
+            color: #00D9FF;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-section-title {
+            font-size: 0.85rem;
+            color: #00D9FF;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #00D9FF;
+        }
+
+        .sidebar-item {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        .sidebar-item strong {
+            color: #00D9FF;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.15);
+            color: #00D9FF;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .cv-meta {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            display: none;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 35px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #2D3142;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #00D9FF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Profil */
+        .profil-text {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(45, 49, 66, 0.05) 100%);
+            padding: 12px;
+            border-left: 4px solid #00D9FF;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+            border-radius: 4px;
+        }
+
+        /* Entry */
+        .entry {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            gap: 10px;
+        }
+
+        .entry-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #2D3142;
+        }
+
+        .entry-subtitle {
+            color: #00D9FF;
+            font-style: italic;
+            font-size: 0.78rem;
+            margin-top: 1px;
+            font-weight: 500;
+        }
+
+        .entry-date {
+            color: #00D9FF;
+            font-weight: 700;
+            white-space: nowrap;
+            font-size: 0.78rem;
+        }
+
+        .entry-description {
+            color: #666;
+            margin-top: 4px;
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        .entry-description ul {
+            margin-left: 15px;
+            margin-top: 4px;
+        }
+
+        .entry-description li {
+            margin-bottom: 2px;
+            color: #777;
+            font-size: 0.82rem;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="cv-name">THAÏ-NAM<br>NGO-MARIÉ</div>
+        <div class="cv-title">Technicien IT</div>
+
+        <!-- Contact -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Contact</div>
+            <div class="sidebar-item">
+                <strong>Email</strong>
+                thainam.ngo.marie@gmail.com
+            </div>
+            <div class="sidebar-item">
+                <strong>Téléphone</strong>
+                +33 7 82 38 29 92
+            </div>
+            <div class="sidebar-item">
+                <strong>LinkedIn</strong>
+                @thainamngomarié
+            </div>
+            <div class="sidebar-item">
+                <strong>Portfolio</strong>
+                https://void19845.github.io
+            </div>
+        </div>
+
+        <!-- Infos & Langues -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+            <div>
+                <div class="sidebar-section-title">Infos</div>
+                <div class="sidebar-item">
+                    <strong>Âge</strong>
+                    19 ans
+                </div>
+                <div class="sidebar-item">
+                    <strong>Permis</strong>
+                    B en cours
+                </div>
+            </div>
+            <div>
+                <div class="sidebar-section-title">Langues</div>
+                <div class="sidebar-item">
+                    <strong>Français</strong>
+                    Maternelle
+                </div>
+                <div class="sidebar-item">
+                    <strong>Anglais</strong>
+                    C1
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Skills -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Skills</div>
+            <div>
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">PHP</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">JavaFX</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Git/GitHub</span>
+                <span class="skill-badge">UML</span>
+                <span class="skill-badge">POO</span>
+                <span class="skill-badge">Agile</span>
+            </div>
+        </div>
+
+        <!-- Intérêts -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Intérêts</div>
+            <div class="sidebar-item">
+                Badminton • Musique • Jeux vidéo • Voyages • Lecture • Escalade
+            </div>
+        </div>
+
+        <div class="cv-meta">
+            Candidat stage<br>Systèmes et Réseaux<br><br>IUT Montreuil
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profil -->
+        <div class="profil-text">
+            Étudiant en BUT Informatique, je recherche un stage en tant que technicien IT. Rigoureux, autonome et curieux, je suis motivé pour relever de nouveaux défis et participer au développement de vos projets informatiques.
+        </div>
+
+        <!-- Formation -->
+        <div class="section-title">Formation</div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">BUT Informatique</div>
+                    <div class="entry-subtitle">IUT de Montreuil</div>
+                </div>
+                <div class="entry-date">2024-2027</div>
+            </div>
+            <div class="entry-description">Développement applicatif</div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">Formation RGPD - CNIL</div>
+                </div>
+                <div class="entry-date">2024</div>
+            </div>
+            <div class="entry-description">Application du RGPD</div>
+        </div>
+
+        <!-- Projets & Expériences -->
+        <div class="section-title">Projets & Expériences</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">BDE IUT Montreuil</div>
+                <div class="entry-date">2024-2025</div>
+            </div>
+            <div class="entry-description">
+                Bureau des Étudiants - Gestion événementielle et coordination d'équipe
+                <ul>
+                    <li>Organisation et planification d'événements (conférences, soirées)</li>
+                    <li>Gestion logistique et mise en place d'espaces</li>
+                    <li>Coordination d'équipe et communication</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">SAE Terraria Java</div>
+                <div class="entry-date">2024</div>
+            </div>
+            <div class="entry-description">
+                Projet Système d'Apprentissage par Expérience - Clone du jeu Terraria
+                <ul>
+                    <li>Développement complet d'un jeu vidéo en Java avec JavaFX</li>
+                    <li>Architecture orientée objet complète avec gestion des entités</li>
+                    <li>Implémentation de la physique du jeu et mécaniques de gameplay</li>
+                    <li>Tests unitaires avec JUnit et documentation UML</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Site Web Boutique Associative</div>
+                <div class="entry-date">2024</div>
+            </div>
+            <div class="entry-description">
+                Plateforme e-commerce complète pour une boutique associative
+                <ul>
+                    <li>Backend robuste développé en PHP avec architecture MVC</li>
+                    <li>Base de données MySQL optimisée pour la gestion des produits</li>
+                    <li>Interface utilisateur responsive avec HTML/CSS/JavaScript</li>
+                    <li>Système d'authentification et gestion des commandes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
