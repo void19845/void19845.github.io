@@ -1,332 +1,311 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #292f34;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        header {
-            background: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #2b5353 0%, #2f4f4f 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            margin: 4rem 0;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .project-content p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .skill-tag {
-            background: #2f4f4f;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: #667eea;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #764ba2;
-        }
-
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <meta name="description" content="Portfolio professionnel - Développeur passionné par l'innovation et la qualité">
+    <title>Portfolio | Développeur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Portfolio</div>
-            <ul>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#experiences">Expériences</a></li>
-            </ul>
+    <div class="noise-bg"></div>
+    
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span class="logo-text">Dev</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#skills" class="nav-link">Stack</a></li>
+                    <li><a href="#cv" class="nav-link">CV</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Créatif passionné par l'innovation et la qualité</p>
-        <a href="#projects" class="cta-button">Découvrir mes projets</a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Développeur<br>
+                    <span class="gradient-text">Thai-Nam NGO</span>
+                </h1>
+                <p class="hero-subtitle">etudiant en informatique passionné par l'innovation, les solutions créatives et les défis techniques. Spécialisé en développement Java/python avec expertise en travail en équipe.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#cv" class="btn btn-secondary">Consulter mon CV</a>
+                </div>
+            </div>
+            <div class="hero-divider"></div>
+        </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Mes Projets</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projets Sélectionnés</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image"><img src="img/terrariaBis.png"></div>
-                    <div class="project-content">
-                        <a href="https://github.com/DUT-Info-Montreuil/SAE_ThaiNam_Lilian_Thierry"><h3>similie terraria en java</h3></a>
-                        <p>Description de ton premier projet. Présente les technologies utilisées et les résultats obtenus.</p>
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>Similié Terraria en Java</h3>
+                        <p class="project-date">2024</p>
+                    </div>
+                    <p class="project-description">
+                        Clone du jeu Terraria en Java avec JavaFX. Architecture orientée objet complète, 
+                        gestion des entités, système de physique avancée et interface utilisateur interactive.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaFX</span>
+                        <span class="tag">POO</span>
+                        <span class="tag">JUnit</span>
+                        <span class="tag">Mermaid</span>
+                    </div>
+                    <a href="https://github.com/DUT-Info-Montreuil/SAE_ThaiNam_Lilian_Thierry" class="project-link" target="_blank">
+                        Voir sur GitHub <span class="arrow">→</span>
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>Site Boutique Associative</h3>
+                        <p class="project-date">2025</p>
+                    </div>
+                    <p class="project-description">
+                        Plateforme e-commerce complète pour associations. Backend PHP, 
+                        base de données MySQL optimisée, interface responsive et moderne.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">UML</span>
+                        <span class="tag">Lucidchart</span>
+                    </div>
+                    <a href="https://github.com/DUT-Info-Montreuil/SAE_3.02_2025_Lay_Jean-Christophe_Chen_Antoine_Thai-Nam_Ngo-Marie" class="project-link" target="_blank">
+                        Voir sur GitHub <span class="arrow">→</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Stack Technique</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Langages de Programmation</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-dot"></span>C</li>
+                        <li><span class="skill-dot"></span>Java</li>
+                        <li><span class="skill-dot"></span>Python</li>
+                        <li><span class="skill-dot"></span>PHP</li>
+                        <li><span class="skill-dot"></span>HTML/CSS</li>
+                        <li><span class="skill-dot"></span>javascript</li>
                         
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Technologiques</h3>
+                    <ul class="skill-list">
+                        
+                        <li><span class="skill-dot"></span>flask</li>
+                        <li><span class="skill-dot"></span>JavaFX</li>
+                        <li><span class="skill-dot"></span>Arduino</li>
+                        <li><span class="skill-dot"></span>MySQL</li>
+                        <li><span class="skill-dot"></span>Docker</li>
+                        <li><span class="skill-dot"></span>Tinkercad</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Modélisation & Outils</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-dot"></span>UML/SysML</li>
+                        <li><span class="skill-dot"></span>Draw.io</li>
+                        <li><span class="skill-dot"></span>Lucidchart</li>
+                        <li><span class="skill-dot"></span>Mermaid</li>
+                        <li><span class="skill-dot"></span>GitHub/Git</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Concepts & Méthodologies</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-dot"></span>POO (Programmation Orientée Objet)</li>
+                        <li><span class="skill-dot"></span>Gestion de Projets</li>
+                        <li><span class="skill-dot"></span>JUnit (Tests Unitaires)</li>
+                        <li><span class="skill-dot"></span>Cahier des Charges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            
+            <!-- About Section -->
+            <div class="cv-about">
+                <h3>À propos</h3>
+                <p>
+                    Développeur passionné par l'innovation et la curiosité. Avec des expérience en développement Java, j.s et pythons 
+                    et travaux en équipe. Rigoureux dans l'application des bonnes pratiques de code et des méthodologies de gestion de projet 
+                    ("methodes agile", UML, SysML, cahier des charges), je m'investis dans chaque projet avec une attention particulière à la qualité, 
+                    l'architecture et l'expérience utilisateur.
+                </p>
+            </div>
+
+            <!-- CV Content -->
+            <div class="cv-content">
+                <div class="cv-column">
+                    <!-- Education -->
+                    <div class="cv-section">
+                        <h4 class="cv-section-title">Formation</h4>
+                        
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>BUT Informatique - Parcours Développement</h5>
+                                <span class="cv-date">2024 - 2027</span>
+                            </div>
+                            <p class="cv-location">IUT Montreuil, Île-de-France</p>
+                            <p class="cv-description">
+                                Formation en 3 ans couvrant le développement d'applications, l'architecture logicielle, 
+                                la programmation orientée objet (POO), les bases de données et les bonnes pratiques de développement.
+                            </p>
+                        </div>
+
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>Apprendre à Apprendre</h5>
+                                <span class="cv-date">2018</span>
+                            </div>
+                            <p class="cv-location">Al-Terre-Native, Coubron</p>
+                            <p class="cv-description">
+                                Formation sur les méthodes et outils d'apprentissage efficace. 
+                                Apprentissage de la planification, organisation et optimisation des processus d'apprentissage.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">💻</div>
-                    <div class="project-content">
-                        <a href="https://github.com/DUT-Info-Montreuil/SAE_3.02_2025_Lay_Jean-Christophe_Chen_Antoine_Thai-Nam_Ngo-Marie"><h3>site web de boutique associative</h3></a>
-                        <p>Détails de ton deuxième projet avec les défis rencontrés et solutions apportées.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3>Projet 3</h3>
-                        <p>Explique ton troisième projet et son impact. Mets en avant ce qui le rend unique.</p>
+
+                <div class="cv-column">
+                    <!-- Experience -->
+                    <div class="cv-section">
+                        <h4 class="cv-section-title">Expérience & Projets</h4>
+                        
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>Projet 36H - Systèmes Énergétiques (2023)</h5>
+                                <span class="cv-date">Fonctionnel</span>
+                            </div>
+                            <p class="cv-location">Lycée Gustave Eiffel - Équipe de 3-4 personnes</p>
+                            <p class="cv-description">
+                                <strong>Rôle :</strong> Leader de projet - Organisation des tâches selon cahier des charges, 
+                                répartition des rôles selon domaines d'expertise, animation pour respecter le calendrier.
+                            </p>
+                            <ul class="cv-achievements">
+                                <li>Algorithme d'optimisation énergétique</li>
+                                <li>Maquette physique avec Arduino (capteurs température, moteurs d'actionnement)</li>
+                                <li>Simulation intégrée en Tinkercad pour validation du système</li>
+                                <li>Modélisation UML avec Draw.io (diagrammes cas d'usage, séquence)</li>
+                                <li>Prototype fonctionnel livré et présenté</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>Projet 72H - Gestion Forêt Urbaine Paris (2023)</h5>
+                                <span class="cv-date">Théorique/Infra</span>
+                            </div>
+                            <p class="cv-location">Lycée Gustave Eiffel - Équipe de 3-4 personnes</p>
+                            <p class="cv-description">
+                                <strong>Rôle :</strong> Leader de projet - Gestion du cahier des charges, organisation et coordination d'équipe, 
+                                respect des délais et livrables.
+                            </p>
+                            <ul class="cv-achievements">
+                                <li>Architecture réseau complète (Arduino, Serveur, Base de données)</li>
+                                <li>Algorithme de gestion des données</li>
+                                <li>Mise en place infrastructure (monitoring, collecte de données)</li>
+                                <li>Modélisation architecture avec Lucidchart (diagrammes système)</li>
+                                <li>Prototype majoritairement théorique avec démonstration du concept</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>Similié Terraria en Java</h5>
+                                <span class="cv-date">Académique</span>
+                            </div>
+                            <p class="cv-location">IUT Montreuil - Projet SAE</p>
+                            <ul class="cv-achievements">
+                                <li>Clone du jeu Terraria en Java avec architecture orientée objet</li>
+                                <li>Interface graphique avec JavaFX</li>
+                                <li>Modélisation avec Mermaid pour architecture système</li>
+                                <li>Tests unitaires avec JUnit</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h5>Site Web Boutique Associative</h5>
+                                <span class="cv-date">Académique</span>
+                            </div>
+                            <p class="cv-location">IUT Montreuil - Projet SAE</p>
+                            <ul class="cv-achievements">
+                                <li>Plateforme e-commerce complète avec backend PHP robuste</li>
+                                <li>Architecture base de données MySQL optimisée</li>
+                                <li>Interface utilisateur responsive (HTML/CSS)</li>
+                                <li>Modélisation UML avec Lucidchart</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Compétences</h2>
-            <div class="skills">
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">PHP</span>
-                <span class="skill-tag">C</span>
-                <span class="skill-tag">POO</span>
-                <span class="skill-tag">Github</span>
+            <!-- Download CV Button -->
+            <div class="cv-footer">
+                <a href="https://void19845.github.io/portfolio/assets/CV-Thai-Nam-NGO.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Voir mon CV
+                </a>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Prenons Contact</h2>
+            <p class="contact-subtitle">Ouvert aux opportunités et aux collaborations intéressantes</p>
+            
+            <div class="contact-links">
+                <a href="https://github.com/void19845" class="contact-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/tha%C3%AF-nam-ngo-mari%C3%A9-61702b2b6/" class="contact-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="mailto:thainam.ngo.marie@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+    
